@@ -4,56 +4,47 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nilmar Silva — Desenvolvedor de Software</title>
-<style>
-  :root{--bg:#0d1526;--card:#16203a;--azul:#4f8ff7;--verde:#34d399;--txt:#e7ecf5;--mut:#9aa8c2}
-  *{margin:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif}
-  body{background:var(--bg);color:var(--txt);line-height:1.6}
-  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
-  header{padding:80px 0 50px;text-align:center}
-  header img.foto{width:130px;height:130px;border-radius:50%;border:3px solid var(--azul);object-fit:cover}
-  h1{font-size:2.4rem;margin:18px 0 6px}
-  .sub{color:var(--azul);font-size:1.15rem;margin-bottom:10px}
-  .tagline{color:var(--mut);max-width:640px;margin:0 auto 26px}
-  .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-  .btn{padding:11px 22px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.95rem}
-  .btn-p{background:var(--azul);color:#fff}
-  .btn-s{border:1px solid var(--azul);color:var(--azul)}
-  section{padding:44px 0}
-  h2{color:var(--azul);font-size:1.35rem;margin-bottom:20px;border-bottom:1px solid #26355a;padding-bottom:8px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
-  .card{background:var(--card);border:1px solid #24345c;border-radius:12px;padding:18px}
-  .card h3{font-size:1.05rem;margin-bottom:6px}
-  .card p{color:var(--mut);font-size:.9rem;margin-bottom:10px}
-  .card a{color:var(--verde);font-size:.85rem;text-decoration:none}
-  .tags{display:flex;flex-wrap:wrap;gap:8px}
-  .tag{background:#1c2a4a;color:var(--txt);font-size:.8rem;padding:5px 12px;border-radius:20px}
-  ul.exp{list-style:none}
-  ul.exp li{padding:10px 0 10px 26px;position:relative;color:var(--mut)}
-  ul.exp li:before{content:'▸';color:var(--verde);position:absolute;left:0}
-  footer{text-align:center;color:var(--mut);font-size:.85rem;padding:40px 0;border-top:1px solid #26355a}
-  footer a{color:var(--azul);text-decoration:none}
-</style>
+<meta name="description" content="Nilmar Silva — Desenvolvedor de Software em formação, fundador da AuthBrasil. Automação, APIs, n8n e agentes de IA.">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header><div class="wrap">
-  <img class="foto" src="foto.jpg" alt="Nilmar Silva">
-  <h1>Nilmar Silva</h1>
-  <div class="sub">Desenvolvedor de Software · Fundador da AuthBrasil</div>
-  <p class="tagline">Construo software real para clientes com agentes de código no fluxo diário — automações n8n, integrações de API e ferramentas em produção. Estudante de ADS na PUC Minas.</p>
-  <div class="btns">
-    <a class="btn btn-p" href="cv.pdf">📄 Download CV</a>
-    <a class="btn btn-s" href="https://www.linkedin.com/in/nilmar-silva/" target="_blank">LinkedIn</a>
-    <a class="btn btn-s" href="https://github.com/Nilmarsilva" target="_blank">GitHub</a>
-  </div>
-</div></header>
+<div id="bg-canvas"></div>
+<div class="grid-overlay"></div>
 
-<section><div class="wrap">
-  <h2>Sobre</h2>
-  <p style="color:var(--mut)">Sou desenvolvedor em formação e fundador da <b>AuthBrasil</b>, onde entreguei 6 projetos para 4 clientes — softwares internos, integrações e automações em produção. Meu diferencial é trabalhar com agentes de IA como parte central do processo: decomponho problemas, escrevo instruções de projeto (CLAUDE.md/AGENTS.md), reviso e testo o que o agente gera. Também curso Formação em Cibersegurança (Hackers do Bem). Busco minha primeira oportunidade como Dev Júnior ou estágio — Belo Horizonte ou remoto.</p>
+<nav id="nav">
+  <div class="wrap">
+    <span class="logo">&lt;NilmarSilva /&gt;</span>
+    <ul>
+      <li><a data-link href="#sobre">Sobre</a></li>
+      <li><a data-link href="#projetos">Projetos</a></li>
+      <li><a data-link href="#stack">Stack</a></li>
+      <li><a data-link href="#experiencia">Experiência</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="foto-wrap"><img src="foto.jpg" alt="Nilmar Silva"></div>
+    <h1>Nilmar Silva</h1>
+    <div class="sub"><span id="typed"></span><span class="cursor">&nbsp;</span></div>
+    <p class="tagline">Construo software real para clientes com agentes de código no fluxo diário — automações n8n, integrações de API e ferramentas em produção. Estudante de ADS na PUC Minas.</p>
+    <div class="btns">
+      <a class="btn btn-p" href="cv.pdf">📄 Download CV</a>
+      <a class="btn btn-s" href="https://www.linkedin.com/in/nilmar-silva/" target="_blank">LinkedIn</a>
+      <a class="btn btn-s" href="https://github.com/Nilmarsilva" target="_blank">GitHub</a>
+    </div>
+  </div>
+  <div class="scroll-hint">role para saber mais ↓</div>
+</header>
+
+<section id="sobre"><div class="wrap reveal">
+  <h2><span class="num">01.</span> Sobre</h2>
+  <p class="lead">Sou desenvolvedor em formação e fundador da <b style="color:var(--txt)">AuthBrasil</b>, onde entreguei 6 projetos para 4 clientes — softwares internos, integrações e automações em produção. Meu diferencial é trabalhar com agentes de IA como parte central do processo: decomponho problemas, escrevo instruções de projeto (CLAUDE.md/AGENTS.md), reviso e testo o que o agente gera. Também curso Formação em Cibersegurança (Hackers do Bem). Busco minha primeira oportunidade como Dev Júnior ou estágio — Belo Horizonte ou remoto.</p>
 </div></section>
 
-<section><div class="wrap">
-  <h2>Projetos</h2>
+<section id="projetos"><div class="wrap reveal">
+  <h2><span class="num">02.</span> Projetos</h2>
   <div class="grid">
     <div class="card"><h3>🤖 linkedin-vagas-bot</h3><p>Sistema de automação de busca de emprego: coleta vagas no LinkedIn, organiza em painel kanban e mapeia formulários. Issues → branches → PRs.</p><a href="https://github.com/Nilmarsilva/linkedin-vagas-bot" target="_blank">Ver no GitHub →</a></div>
     <div class="card"><h3>🗺️ LeadMap</h3><p>Ferramenta de prospecção: encontra empresas sem website no Google Maps e exporta leads em CSV. FastAPI + React + Docker.</p><a href="https://github.com/Nilmarsilva/LeadMap" target="_blank">Ver no GitHub →</a></div>
@@ -64,8 +55,8 @@
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <h2>Stack</h2>
+<section id="stack"><div class="wrap reveal">
+  <h2><span class="num">03.</span> Stack</h2>
   <div class="tags">
     <span class="tag">Python</span><span class="tag">C#</span><span class="tag">SQL / PostgreSQL</span>
     <span class="tag">APIs REST</span><span class="tag">n8n</span><span class="tag">React</span>
@@ -74,18 +65,26 @@
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <h2>Experiência</h2>
-  <ul class="exp">
-    <li><b style="color:var(--txt)">AuthBrasil — Fundador/Dev Freelancer</b> (2025–atual): 6 projetos para 4 clientes; automação n8n integrando software próprio ao CRM Pipedrive em produção; 2 softwares internos para escritório de advocacia em uso contínuo.</li>
-    <li><b style="color:var(--txt)">PUC Minas — ADS</b> (2026–2028): formação em andamento.</li>
-    <li><b style="color:var(--txt)">Formação em Cibersegurança</b> — Hackers do Bem (em andamento).</li>
+<section id="experiencia"><div class="wrap reveal">
+  <h2><span class="num">04.</span> Experiência</h2>
+  <ul class="timeline">
+    <li><span class="period">2025 — atual</span><b>AuthBrasil — Fundador / Dev Freelancer</b>
+      <p>6 projetos para 4 clientes; automação n8n integrando software próprio ao CRM Pipedrive em produção; 2 softwares internos para escritório de advocacia em uso contínuo.</p></li>
+    <li><span class="period">2026 — 2028</span><b>PUC Minas — Análise e Desenvolvimento de Sistemas</b>
+      <p>Formação em andamento.</p></li>
+    <li><span class="period">em andamento</span><b>Formação em Cibersegurança — Hackers do Bem</b></li>
   </ul>
 </div></section>
 
-<footer><div class="wrap">
-  <a href="mailto:nilmarbiosilva@gmail.com">nilmarbiosilva@gmail.com</a> · (31) 98338-5412 · Belo Horizonte, MG<br>
-  <a href="https://authbrasil.com.br" target="_blank">authbrasil.com.br</a>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <a href="mailto:nilmarbiosilva@gmail.com">nilmarbiosilva@gmail.com</a> · (31) 98338-5412 · Belo Horizonte, MG<br>
+    <a href="https://authbrasil.com.br" target="_blank">authbrasil.com.br</a>
+  </div>
+</footer>
+
+<div class="back-top" id="backTop">↑</div>
+
+<script src="script.js"></script>
 </body>
 </html>
